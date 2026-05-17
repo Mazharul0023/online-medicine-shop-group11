@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../public/css/contact.css">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../public/contact.css">
 </head>
 
 <body>
@@ -10,27 +11,27 @@
     <form method="post" action="../controllers/AuthController.php?action=register">
         <table class="form-table">
             <tr>
-                <td>Name</td>
+                <td>Name <span class="required">*</span></td>
                 <td><input type="text" name="name" required></td>
             </tr>
             <tr>
-                <td>Email</td>
+                <td>Email <span class="required">*</span></td>
                 <td><input type="email" name="email" required></td>
             </tr>
             <tr>
-                <td>Password</td>
+                <td>Password <span class="required">*</span></td>
                 <td><input type="password" name="password" required></td>
             </tr>
             <tr>
-                <td>Address</td>
+                <td>Address <span class="required">*</span></td>
                 <td><textarea name="address" rows="4" required></textarea></td>
             </tr>
             <tr>
-                <td>Phone</td>
+                <td>Phone <span class="required">*</span></td>
                 <td><input type="text" name="phone" required></td>
             </tr>
             <tr>
-                <td>Role</td>
+                <td>Role <span class="required">*</span></td>
                 <td>
                     <select name="role">
                         <option value="customer">Customer</option>
