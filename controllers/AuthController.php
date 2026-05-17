@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['action']) && $_GET['act
     // Prepared Statement setup (cite: 1653)
     $sql = "INSERT INTO users (name, email, password_hash, role, address, phone) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
-    
+
     // "ssssss" mane 6 ta string type parameters (cite: 1655, 1667)
     mysqli_stmt_bind_param($stmt, "ssssss", $name, $email, $hashed_pass, $role, $address, $phone);
 
@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['action']) && $_GET['act
     } else {
         echo "Error: " . mysqli_stmt_error($stmt);
     }
-    
+
     mysqli_stmt_close($stmt);
 }
-?>
