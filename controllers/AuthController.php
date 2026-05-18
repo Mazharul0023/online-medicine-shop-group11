@@ -1,8 +1,7 @@
 <?php
 require_once "../config/db.php";
 
-/** @var mysqli $conn */  // EI LINE-TI ADD KORUN
-// Eita likhle VS Code bujhe jabe $conn hocche mysqli connection variable
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['action']) && $_GET['action'] == 'register') {
     $name     = trim($_POST["name"]);
@@ -66,7 +65,7 @@ if ($action == 'update_profile' && $_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
 
-    // Image Upload Logic
+
     $target_dir = "../public/uploads/";
     $file_name = time() . "_" . basename($_FILES["profile_pic"]["name"]);
     $target_file = $target_dir . $file_name;
@@ -82,7 +81,7 @@ if ($action == 'update_profile' && $_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (mysqli_stmt_execute($stmt)) {
-        $_SESSION['name'] = $name; // Session update
+        $_SESSION['name'] = $name; 
         header("Location: ../views/profile.php?msg=updated");
     }
     mysqli_stmt_close($stmt);
