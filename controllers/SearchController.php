@@ -1,13 +1,12 @@
 <?php
 require_once "../config/db.php";
 
-/** @var mysqli $conn */  // EI LINE-TI ADD KORUN
-// Eita likhle VS Code bujhe jabe $conn hocche mysqli connection variable
+/** @var mysqli $conn */ 
+
 
 $q = $_GET['q'] ?? "";
 $category = $_GET['category'] ?? "";
 
-// SQL structure: Category thakle AND clause jog hobe
 $sql = "SELECT m.*, c.name as category_name, c.category_type 
         FROM medicines m 
         JOIN categories c ON m.category_id = c.id 
@@ -30,7 +29,6 @@ if ($category != "") {
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-// Medicine Card Display logic
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<div class='medicine-card'>";

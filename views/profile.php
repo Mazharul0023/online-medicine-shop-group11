@@ -3,7 +3,6 @@ session_start();
 require_once "../config/db.php";
 
 /** @var mysqli $conn */  // EI LINE-TI ADD KORUN
-// Eita likhle VS Code bujhe jabe $conn hocche mysqli connection variable
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");

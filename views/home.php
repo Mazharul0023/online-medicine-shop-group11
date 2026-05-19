@@ -83,7 +83,7 @@ $result = mysqli_query($conn, $sql);
                     document.getElementById('medicineList').innerHTML = this.responseText;
                 }
             };
-            // URL-e search query ebong category dui-i pathao hochhe
+            
             xhttp.open("GET", "../controllers/SearchController.php?q=" + input + "&category=" + category, true);
             xhttp.send();
         }

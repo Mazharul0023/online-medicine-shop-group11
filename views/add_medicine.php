@@ -2,7 +2,6 @@
 session_start();
 require_once "../config/db.php";
 
-// Admin check logic
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     echo "Access Denied! Admin access only.";
     exit();
@@ -30,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_close($stmt);
 }
 
-// Fetch categories for dropdown
 $cat_sql = "SELECT * FROM categories";
 $cat_result = mysqli_query($conn, $cat_sql);
 ?>

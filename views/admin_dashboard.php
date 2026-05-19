@@ -4,7 +4,6 @@ session_start();
 
 require_once "../config/db.php";
 
-// Admin check logic
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
@@ -13,7 +12,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         exit();
 }
 
-// Medicine list fetch kora (Category name shoho)
+
 
 $sql = "SELECT m.*, c.name as category_name FROM medicines m 
 
